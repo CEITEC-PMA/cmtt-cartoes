@@ -1,0 +1,41 @@
+{
+  "name": "formulario3",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "mock": "yarn run json-server -w -p 3333 ./mock/database.json",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@material-ui/core": "^4.12.4",
+    "@mui/icons-material": "^5.11.11",
+    "@mui/material": "^5.11.15",
+    "@react-pdf/renderer": "^3.1.7",
+    "@unform/core": "^2.1.6",
+    "@unform/web": "^2.1.6",
+    "axios": "^1.3.5",
+    "cpf-cnpj-validator": "^1.0.3",
+    "html2canvas": "^1.4.1",
+    "install": "^0.13.0",
+    "jspdf": "^2.5.1",
+    "npm": "^9.6.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.0",
+    "react-router-dom": "^6.9.0",
+    "yup": "^1.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "json-server": "^0.17.3",
+    "typescript": "^4.9.3",
+    "vite": "^4.1.0"
+  }
+}
