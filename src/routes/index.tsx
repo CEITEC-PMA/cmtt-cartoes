@@ -9,7 +9,7 @@ import Auxiliar from "../pages/cadastro/AuxiliarMotorista";
 export const AppRoutes = () => {
   return (
     <BrowserRouter>
-      <Sidebar />
+      {/* <Sidebar /> */}
       <Routes>
         <Route element={<App />}>
           {/* <Route path="/cadastroescolar" element={<Escolar />} /> */}
