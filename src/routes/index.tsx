@@ -12,11 +12,11 @@ export const AppRoutes = () => {
       <Sidebar />
       <Routes>
         <Route element={<App />}>
-          <Route path="/cadastroescolar" element={<Escolar />} />
+          {/* <Route path="/cadastroescolar" element={<Escolar />} /> */}
           <Route path="/cadastroauxiliar" element={<Auxiliar />} />
-          <Route path="/cadastrotaxi" element={<Taxi />} />
-          <Route path="/cadastromoto" element={<MotoTaxi />} />
-          <Route path="*" element={<Navigate to="/cadastroescolar" />} />
+          {/* <Route path="/cadastrotaxi" element={<Taxi />} /> */}
+          {/* <Route path="/cadastromoto" element={<MotoTaxi />} /> */}
+          <Route path="*" element={<Navigate to="/cadastroauxiliar" />} />
         </Route>
       </Routes>
     </BrowserRouter>
