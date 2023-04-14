@@ -131,7 +131,7 @@ const Taxi = () => {
       <UnForm ref={formRef} onSubmit={handleSave}>
         <Grid container display="flex" justifyContent="center">
           <Grid item my={2}>
-            <Typography variant="h6">Cadastro Taxi</Typography>
+            <Typography variant="h6">Cadastro Taxistas</Typography>
           </Grid>
         </Grid>
         <Grid container display="flex" justifyContent="center">

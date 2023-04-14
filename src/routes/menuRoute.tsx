@@ -21,6 +21,7 @@ import LocalTaxiIcon from "@mui/icons-material/LocalTaxi";
 import SportsMotorsportsIcon from "@mui/icons-material/SportsMotorsports";
 import Link from "@mui/material/Link";
 import GroupAddIcon from "@mui/icons-material/GroupAdd";
+import { Grid } from "@mui/material";
 
 const drawerWidth = 220;
 
@@ -116,23 +117,29 @@ export default function Sidebar() {
             "linear-gradient(195deg, rgb(73, 163, 241), rgb(15, 76, 129))",
         }}
       >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={handleDrawerOpen}
-            edge="start"
-            sx={{
-              marginRight: 5,
-              ...(open && { display: "none" }),
-            }}
+        <Toolbar sx={{ display: "flex" }}>
+          <Box
+            sx={{ marginRight: "auto", display: "flex", alignItems: "center" }}
           >
-            <MenuIcon />
-          </IconButton>
-
-          <Typography variant="h6" noWrap component="div">
-            Emissão de Permissionário
-          </Typography>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              onClick={handleDrawerOpen}
+              edge="start"
+              sx={{
+                marginRight: 5,
+                ...(open && { display: "none" }),
+              }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" noWrap component="div">
+              Emissão de Permissionário
+            </Typography>
+          </Box>
+          <Box my="0.2em">
+            <img width="300px" src="cmtt.png" />
+          </Box>
         </Toolbar>
       </AppBar>
 
@@ -152,6 +159,8 @@ export default function Sidebar() {
           <ListItem disablePadding sx={{ display: "block" }}>
             <ListItemButton
               sx={{
+                mt: 2.8,
+
                 minHeight: 54,
                 justifyContent: open ? "initial" : "center",
                 px: open ? 2.5 : 12.5,
