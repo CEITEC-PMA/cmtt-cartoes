@@ -150,7 +150,7 @@ export default function Sidebar() {
         <Divider />
         <List>
           <ListItem disablePadding sx={{ display: "block" }}>
-            {/* <ListItemButton
+            <ListItemButton
               sx={{
                 minHeight: 54,
                 justifyContent: open ? "initial" : "center",
@@ -178,7 +178,7 @@ export default function Sidebar() {
                   sx={{ opacity: open ? 1 : 0 }}
                 />
               </Link>
-            </ListItemButton> */}
+            </ListItemButton>
             <ListItemButton
               sx={{
                 minHeight: 54,
@@ -210,7 +210,7 @@ export default function Sidebar() {
             </ListItemButton>
           </ListItem>
 
-          {/* <ListItem disablePadding sx={{ display: "block" }}>
+          <ListItem disablePadding sx={{ display: "block" }}>
             <ListItemButton
               sx={{
                 minHeight: 54,
@@ -240,9 +240,9 @@ export default function Sidebar() {
                 />
               </Link>
             </ListItemButton>
-          </ListItem> */}
+          </ListItem>
 
-          {/* <ListItem disablePadding sx={{ display: "block" }}>
+          <ListItem disablePadding sx={{ display: "block" }}>
             <ListItemButton
               sx={{
                 minHeight: 54,
@@ -272,7 +272,7 @@ export default function Sidebar() {
                 />
               </Link>
             </ListItemButton>
-          </ListItem> */}
+          </ListItem>
           <Divider />
         </List>
       </Drawer>
