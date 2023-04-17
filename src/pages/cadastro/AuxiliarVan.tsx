@@ -141,14 +141,14 @@ const Van = () => {
           spacing={2}
         >
           <Grid item mb="1rem">
+            <UnDateTimePicker name="certidao" label="Certidão de Nascimento" />
+          </Grid>
+          <Grid item mb="1rem">
             <UnTextField name="modelo" label="Modelo" />
           </Grid>
 
           <Grid item mb="1rem">
             <UnTextField name="marca" label="Marca" />
-          </Grid>
-          <Grid item mb="1rem">
-            <UnTextField name="ano" label="Ano" />
           </Grid>
         </Grid>
         <Grid
@@ -165,7 +165,7 @@ const Van = () => {
             <UnTextField name="chassi" label="Chassi" />
           </Grid>
           <Grid item mb="1rem">
-            <UnDateTimePicker name="certidao" label="Certidão de Nascimento" />
+            <UnTextField name="ano" label="Ano" />
           </Grid>
         </Grid>
         <Grid
