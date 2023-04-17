@@ -50,6 +50,7 @@ const Taxi = () => {
         pdf.text(`${dadosValidados.dataexpedicao}`, 135, 67);
         pdf.text(`${dadosValidados.endereco}`, 73, 27);
         pdf.text(`${dadosValidados.name}`, 80, 22);
+        pdf.text(`${dadosValidados.emissao}`, 109, 79);
 
         // PARTE D0 MEIO DOS CARTOES
         //primeiro
@@ -118,6 +119,7 @@ const Taxi = () => {
     orgao: yup.string().required().uppercase(),
     validade: yup.string().required().uppercase(),
     dataexpedicao: yup.string().required().uppercase(),
+    emissao: yup.string().required().uppercase(),
     name: yup.string().required().uppercase(),
     cor: yup.string().required().uppercase(),
     endereco: yup.string().required().uppercase(),
@@ -164,7 +166,7 @@ const Taxi = () => {
           spacing={2}
         >
           <Grid item mb="1rem">
-            <UnTextField name="endereco" label="Endereço" />
+            <UnDateTimePicker name="dataexpedicao" label="Data Expedição" />
           </Grid>
           <Grid item mb="1rem">
             <UnTextField name="modelo" label="Modelo" />
@@ -233,7 +235,10 @@ const Taxi = () => {
           spacing={2}
         >
           <Grid item mb="1rem">
-            <UnDateTimePicker name="dataexpedicao" label="Data Expedição" />
+            <UnTextField name="endereco" label="Endereço" />
+          </Grid>
+          <Grid item mb="1rem">
+            <UnDateTimePicker name="emissao" label="Data Emissão" />
           </Grid>
         </Grid>
         <Grid container display="flex" direction="row" justifyContent="center">

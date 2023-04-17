@@ -13,11 +13,11 @@ import { IUnFormsErrors, UnForm, useUnForm } from "../../forms";
 import { useNavigate } from "react-router-dom";
 import { toast, Toaster } from "react-hot-toast";
 import jsPDF from "jspdf";
-import imagem from "../../../public/Escolar.jpg";
+import imagem from "../../../public/auxiliarvan.jpg";
 
 import { cpf, cpf as cpfValidator } from "cpf-cnpj-validator";
 
-const Escolar = () => {
+const Van = () => {
   const navigate = useNavigate();
   const { formRef } = useUnForm();
 
@@ -38,53 +38,28 @@ const Escolar = () => {
 
         //PARTE DE CIMA DOS CARTOES
 
-        pdf.text(`${dadosValidados.marca}`, 55, 40);
-        pdf.text(`${dadosValidados.modelo}`, 55, 53);
-        pdf.text(`${dadosValidados.cpf}`, 55, 60);
-        pdf.text(`${dadosValidados.rg}`, 55, 71);
-        pdf.text(`${dadosValidados.ponto}`, 100, 42);
-        pdf.text(`${dadosValidados.chassi}`, 100, 51);
-        pdf.text(`${dadosValidados.ano}`, 100, 60);
-        pdf.text(`${dadosValidados.orgao}`, 100, 70);
-        pdf.text(`${dadosValidados.matricula}`, 145, 42);
-        pdf.text(`${dadosValidados.placa}`, 145, 50);
-        pdf.text(`${dadosValidados.validade}`, 145, 61);
-        pdf.text(`${dadosValidados.dataexpedicao}`, 135, 70);
-        pdf.text(`${dadosValidados.endereco}`, 73, 30);
-        pdf.text(`${dadosValidados.name}`, 80, 25);
-        pdf.text(`${dadosValidados.emissao}`, 107, 80);
+        pdf.text(`${dadosValidados.modelo}`, 55, 45);
+        pdf.text(`${dadosValidados.marca}`, 55, 55);
+        pdf.text(`${dadosValidados.cpf}`, 55, 64);
+        pdf.text(`${dadosValidados.chassi}`, 100, 56);
+        pdf.text(`${dadosValidados.ano}`, 100, 63);
+        pdf.text(`${dadosValidados.matricula}`, 139, 45);
+        pdf.text(`${dadosValidados.placa}`, 140, 54);
+        pdf.text(`${dadosValidados.validade}`, 140, 64);
+        pdf.text(`${dadosValidados.endereco}`, 72, 31);
+        pdf.text(`${dadosValidados.name}`, 78, 25);
+        pdf.text(`${dadosValidados.emissao}`, 108, 83);
 
         // PARTE D0 MEIO DOS CARTOES
         //primeiro
-        pdf.text(`${dadosValidados.placa}`, 76, 148);
-        pdf.text(`${dadosValidados.cor}`, 76, 155);
-        pdf.text(`${dadosValidados.matricula}`, 76, 163);
-        pdf.text(`${dadosValidados.modelo}`, 38, 147);
-        pdf.text(`${dadosValidados.marca}`, 38, 156);
-        pdf.text(`${dadosValidados.chassi}`, 38, 164);
-        pdf.text(`${dadosValidados.ano}`, 38, 172);
+        pdf.text(`${dadosValidados.cpf}`, 38, 145);
+        pdf.text(`${dadosValidados.rg}`, 37, 153);
+        pdf.text(`${dadosValidados.name}`, 42, 168);
         //segundo
-        pdf.text(`${dadosValidados.placa}`, 180, 148);
-        pdf.text(`${dadosValidados.cor}`, 179, 157);
-        pdf.text(`${dadosValidados.modelo}`, 140, 150);
-        pdf.text(`${dadosValidados.marca}`, 140, 157);
-        pdf.text(`${dadosValidados.chassi}`, 140, 165);
-        pdf.text(`${dadosValidados.ano}`, 140, 173);
-        pdf.text(`${dadosValidados.matricula}`, 180, 166);
+        pdf.text(`${dadosValidados.matricula}`, 141, 140);
+        pdf.text(`${dadosValidados.validade}`, 177, 151);
 
-        //DOIS CARTOES DE BAIXO
-        //primeiro
-        pdf.setFontSize(8);
-        pdf.text(`${dadosValidados.cnh}`, 36, 219);
-        pdf.text(`${dadosValidados.cpf}`, 35, 225);
-        pdf.text(`${dadosValidados.rg}`, 36, 234);
-        pdf.text(`${dadosValidados.name}`, 36, 242);
-        //segundo
-        pdf.text(`${dadosValidados.matricula}`, 140, 218);
-        pdf.text(`${dadosValidados.ponto}`, 140, 240);
-        pdf.text(`${dadosValidados.inscricaomunicipal}`, 140, 225);
-
-        pdf.save("escolar.pdf");
+        pdf.save("van.pdf");
 
         setTimeout(() => {
           // navigate("/cadastroponto");
@@ -117,17 +92,12 @@ const Escolar = () => {
     chassi: yup.string().required().uppercase(),
     ano: yup.string().required().uppercase(),
     matricula: yup.string().required().uppercase(),
-    ponto: yup.string().required().uppercase(),
     marca: yup.string().required().uppercase(),
-    orgao: yup.string().required().uppercase(),
     validade: yup.string().required().uppercase(),
-    name: yup.string().required().uppercase(),
-    dataexpedicao: yup.string().required().uppercase(),
     emissao: yup.string().required().uppercase(),
-    cor: yup.string().required().uppercase(),
+    name: yup.string().required().uppercase(),
     endereco: yup.string().required().uppercase(),
-    cnh: yup.string().required().uppercase(),
-    inscricaomunicipal: yup.string().required().uppercase(),
+    certidao: yup.string().required().uppercase(),
   });
 
   const theme = useTheme();
@@ -137,7 +107,7 @@ const Escolar = () => {
       <UnForm ref={formRef} onSubmit={handleSave}>
         <Grid container display="flex" justifyContent="center">
           <Grid item my={2}>
-            <Typography variant="h6">Cadastro Escolar</Typography>
+            <Typography variant="h6">Cadastro Acompanhante de Van </Typography>
           </Grid>
         </Grid>
         <Grid container display="flex" justifyContent="center">
@@ -145,6 +115,7 @@ const Escolar = () => {
             <Divider sx={{ width: 500 }} />
           </Grid>
         </Grid>
+
         <Grid
           container
           display="flex"
@@ -170,15 +141,15 @@ const Escolar = () => {
           spacing={2}
         >
           <Grid item mb="1rem">
-            <UnDateTimePicker name="dataexpedicao" label="Data Expedição" />
-          </Grid>
-          <Grid item mb="1rem">
             <UnTextField name="modelo" label="Modelo" />
           </Grid>
 
           <Grid item mb="1rem">
             <UnTextField name="marca" label="Marca" />
           </Grid>
+          <Grid item mb="1rem">
+            <UnTextField name="ano" label="Ano" />
+          </Grid>
         </Grid>
         <Grid
           container
@@ -187,15 +158,15 @@ const Escolar = () => {
           justifyContent="center"
           spacing={2}
         >
-          <Grid item mb="1rem">
-            <UnTextField name="cor" label="Cor" />
-          </Grid>
           <Grid item mb="1rem">
             <UnTextField name="placa" label="Placa" />
           </Grid>
           <Grid item mb="1rem">
             <UnTextField name="chassi" label="Chassi" />
           </Grid>
+          <Grid item mb="1rem">
+            <UnDateTimePicker name="certidao" label="Certidão de Nascimento" />
+          </Grid>
         </Grid>
         <Grid
           container
@@ -204,33 +175,18 @@ const Escolar = () => {
           justifyContent="center"
           spacing={2}
         >
-          <Grid item mb="1rem">
-            <UnTextField name="ano" label="Ano" />
-          </Grid>
           <Grid item mb="1rem">
             <UnTextField name="matricula" label="Matricula" />
           </Grid>
-          <Grid item mb="1rem">
-            <UnTextField name="ponto" label="Ponto" />
-          </Grid>
-        </Grid>
-        <Grid
-          container
-          display="flex"
-          direction="row"
-          justifyContent="center"
-          spacing={2}
-        >
-          <Grid item mb="1rem">
-            <UnTextField name="orgao" label="ORG. Expedidor" />
-          </Grid>
+
           <Grid item mb="1rem">
             <UnTextField name="validade" label="Validade" />
           </Grid>
           <Grid item mb="1rem">
-            <UnTextField name="cnh" label="CNH" />
+            <UnTextField name="endereco" label="Endereço" />
           </Grid>
         </Grid>
+
         <Grid
           container
           display="flex"
@@ -239,16 +195,7 @@ const Escolar = () => {
           spacing={2}
         >
           <Grid item mb="1rem">
-            <UnTextField
-              name="inscricaomunicipal"
-              label="Inscrição Municipal"
-            />
-          </Grid>
-          <Grid item mb="1rem">
-            <UnTextField name="endereco" label="Endereço" />
-          </Grid>
-          <Grid item mb="1rem">
-            <UnDateTimePicker name="emissao" label="Data emissão" />
+            <UnDateTimePicker name="emissao" label="Data Emissão" />
           </Grid>
         </Grid>
         <Grid container display="flex" direction="row" justifyContent="center">
@@ -271,4 +218,4 @@ const Escolar = () => {
   );
 };
 
-export default Escolar;
+export default Van;

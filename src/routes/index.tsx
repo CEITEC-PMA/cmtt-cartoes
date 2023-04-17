@@ -5,6 +5,7 @@ import MotoTaxi from "../pages/cadastro/MotoTaxi";
 import Taxi from "../pages/cadastro/Taxi";
 import Sidebar from "./menuRoute";
 import Auxiliar from "../pages/cadastro/AuxiliarMotorista";
+import Van from "../pages/cadastro/AuxiliarVan";
 
 export const AppRoutes = () => {
   return (
@@ -16,6 +17,7 @@ export const AppRoutes = () => {
           <Route path="/cadastroauxiliar" element={<Auxiliar />} />
           <Route path="/cadastrotaxi" element={<Taxi />} />
           <Route path="/cadastromoto" element={<MotoTaxi />} />
+          <Route path="/cadastrovan" element={<Van />} />
           <Route path="*" element={<Navigate to="/cadastroescolar" />} />
         </Route>
       </Routes>

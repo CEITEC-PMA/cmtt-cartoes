@@ -21,7 +21,7 @@ import LocalTaxiIcon from "@mui/icons-material/LocalTaxi";
 import SportsMotorsportsIcon from "@mui/icons-material/SportsMotorsports";
 import Link from "@mui/material/Link";
 import GroupAddIcon from "@mui/icons-material/GroupAdd";
-import { Grid } from "@mui/material";
+import AirportShuttleIcon from "@mui/icons-material/AirportShuttle";
 
 const drawerWidth = 220;
 
@@ -138,7 +138,7 @@ export default function Sidebar() {
             </Typography>
           </Box>
           <Box my="0.2em">
-            <img width="300px" src="cmtt.png" />
+            <img width="300px" src="cmtt.png" alt="logo cmtt" />
           </Box>
         </Toolbar>
       </AppBar>
@@ -277,6 +277,37 @@ export default function Sidebar() {
               >
                 <ListItemText
                   primary="Moto táxi"
+                  sx={{ opacity: open ? 1 : 0 }}
+                />
+              </Link>
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding sx={{ display: "block" }}>
+            <ListItemButton
+              sx={{
+                minHeight: 54,
+                justifyContent: open ? "initial" : "center",
+                px: open ? 2.5 : 12.8,
+              }}
+            >
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 2 : "auto",
+                  justifyContent: "center",
+                }}
+              >
+                <Link href="/cadastrovan" sx={{ color: "#6d7070" }}>
+                  <AirportShuttleIcon />
+                </Link>
+              </ListItemIcon>
+              <Link
+                href="/cadastrovan"
+                underline="none"
+                sx={{ color: "#6d7070" }}
+              >
+                <ListItemText
+                  primary="Acompanhante Van"
                   sx={{ opacity: open ? 1 : 0 }}
                 />
               </Link>

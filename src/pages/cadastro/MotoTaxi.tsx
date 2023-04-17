@@ -38,7 +38,6 @@ const MotoTaxi = () => {
         pdf.text(`${dadosValidados.name}`, 47, 28);
         pdf.text(`${dadosValidados.inscricao}`, 47, 37);
         pdf.text(`${dadosValidados.emissao}`, 47, 46);
-        pdf.text(`${dadosValidados.cadastro}`, 75, 36);
 
         pdf.text(`${dadosValidados.validade}`, 47, 90);
         pdf.text(`${dadosValidados.modelo}`, 47, 102);
@@ -53,7 +52,6 @@ const MotoTaxi = () => {
         //segundo cartao
         pdf.text(`${dadosValidados.name}`, 47, 168);
         pdf.text(`${dadosValidados.inscricao}`, 47, 177);
-        pdf.text(`${dadosValidados.cadastro}`, 75, 177);
         pdf.text(`${dadosValidados.emissao}`, 47, 187);
 
         pdf.text(`${dadosValidados.validade}`, 47, 231);
@@ -97,7 +95,6 @@ const MotoTaxi = () => {
     grupoSanguineo: yup.string().required().uppercase(),
     validade: yup.string().required().uppercase(),
     emissao: yup.string().required().uppercase(),
-    cadastro: yup.string().required().uppercase(),
   });
 
   const theme = useTheme();
@@ -182,18 +179,7 @@ const MotoTaxi = () => {
             <UnTextField name="inscricao" label="inscricao" />
           </Grid>
           <Grid item mb="1rem">
-            <UnTextField name="emissao" label="Emissão" />
-          </Grid>
-        </Grid>
-        <Grid
-          container
-          display="flex"
-          direction="row"
-          justifyContent="center"
-          spacing={2}
-        >
-          <Grid item mb="1rem">
-            <UnDateTimePicker name="cadastro" label="Data Cadastro" />
+            <UnDateTimePicker name="emissao" label="Data Emissão" />
           </Grid>
         </Grid>
 

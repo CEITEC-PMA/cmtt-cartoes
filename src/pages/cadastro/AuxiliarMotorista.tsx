@@ -50,8 +50,9 @@ const Auxiliar = () => {
         pdf.text(`${dadosValidados.placa}`, 140, 54);
         pdf.text(`${dadosValidados.validade}`, 143, 62);
         pdf.text(`${dadosValidados.dataexpedicao}`, 132, 71);
-        pdf.text(`${dadosValidados.endereco}`, 72, 32);
+        pdf.text(`${dadosValidados.endereco}`, 72, 34);
         pdf.text(`${dadosValidados.name}`, 78, 28);
+        pdf.text(`${dadosValidados.emissao}`, 104, 81);
 
         // PARTE D0 MEIO DOS CARTOES
         //primeiro
@@ -103,6 +104,7 @@ const Auxiliar = () => {
     orgao: yup.string().required().uppercase(),
     validade: yup.string().required().uppercase(),
     dataexpedicao: yup.string().required().uppercase(),
+    emissao: yup.string().required().uppercase(),
     name: yup.string().required().uppercase(),
     cor: yup.string().required().uppercase(),
     endereco: yup.string().required().uppercase(),
@@ -151,7 +153,7 @@ const Auxiliar = () => {
           spacing={2}
         >
           <Grid item mb="1rem">
-            <UnTextField name="endereco" label="Endereço" />
+            <UnDateTimePicker name="dataexpedicao" label="Data Expedição" />
           </Grid>
           <Grid item mb="1rem">
             <UnTextField name="modelo" label="Modelo" />
@@ -220,13 +222,16 @@ const Auxiliar = () => {
           spacing={2}
         >
           <Grid item mb="1rem">
+            <UnTextField name="endereco" label="Endereço" />
+          </Grid>
+          <Grid item mb="1rem">
             <UnTextField
               name="inscricaomunicipal"
               label="Inscrição Municipal"
             />
           </Grid>
           <Grid item mb="1rem">
-            <UnDateTimePicker name="dataexpedicao" label="Data Expedição" />
+            <UnDateTimePicker name="emissao" label="Data emissão" />
           </Grid>
         </Grid>
         <Grid container display="flex" direction="row" justifyContent="center">
