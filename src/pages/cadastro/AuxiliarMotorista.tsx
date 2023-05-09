@@ -16,6 +16,7 @@ import jsPDF from "jspdf";
 import imagem from "../../../public/auxiliarMotorista.jpg";
 
 import { cpf, cpf as cpfValidator } from "cpf-cnpj-validator";
+import axios from "axios";
 
 const Auxiliar = () => {
   const navigate = useNavigate();
@@ -29,6 +30,17 @@ const Auxiliar = () => {
       .then((dadosValidados) => {
         console.log(dadosValidados);
         toast.success("Cadastro feito com sucesso!");
+
+        axios
+          .post("http://localhost:3000/v1/auxiliarMotorista", dadosValidados)
+          .then((response) => {
+            console.log(response);
+            toast.success("Dados salvos com sucesso!");
+          })
+          .catch((error) => {
+            console.error(error);
+            toast.error("Dados já foram salvos!");
+          });
 
         const pdf = new jsPDF();
 

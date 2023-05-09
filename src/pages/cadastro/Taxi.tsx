@@ -15,10 +15,12 @@ import { toast, Toaster } from "react-hot-toast";
 import jsPDF from "jspdf";
 import imagem from "../../../public/dadosTaxi.jpg";
 import { cpf, cpf as cpfValidator } from "cpf-cnpj-validator";
+import axios from "axios";
 
 const Taxi = () => {
   const navigate = useNavigate();
   const { formRef } = useUnForm();
+
   const handleSave = (dados: any) => {
     console.log(dados);
 
@@ -27,6 +29,17 @@ const Taxi = () => {
       .then((dadosValidados) => {
         console.log(dadosValidados);
         toast.success("Cadastro feito com sucesso!");
+
+        axios
+          .post("http://localhost:3000/v1/taxista", dadosValidados)
+          .then((response) => {
+            console.log(response);
+            toast.success("Dados salvos com sucesso!");
+          })
+          .catch((error) => {
+            console.error(error);
+            toast.error("Dados já foram salvos!");
+          });
 
         const pdf = new jsPDF();
 
@@ -91,10 +104,12 @@ const Taxi = () => {
       .catch((errors: yup.ValidationError) => {
         const validationErrors: IUnFormsErrors = {};
         toast.error("Precisa validar todos os campos!");
+
         errors.inner.forEach((error) => {
           if (!error.path) return;
           validationErrors[error.path] = error.message;
         });
+
         formRef.current?.setErrors(validationErrors);
       });
   };

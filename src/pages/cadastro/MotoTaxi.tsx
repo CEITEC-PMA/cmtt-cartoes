@@ -15,6 +15,7 @@ import { toast, Toaster } from "react-hot-toast";
 import jsPDF from "jspdf";
 import imagem from "../../../public/dadosMoto.jpg";
 import { cpf, cpf as cpfValidator } from "cpf-cnpj-validator";
+import axios from "axios";
 
 const MotoTaxi = () => {
   const navigate = useNavigate();
@@ -27,6 +28,17 @@ const MotoTaxi = () => {
       .then((dadosValidados) => {
         console.log(dadosValidados);
         toast.success("Cadastro feito com sucesso!");
+
+        axios
+          .post("http://localhost:3000/v1/mototaxi", dadosValidados)
+          .then((response) => {
+            console.log(response);
+            toast.success("Dados salvos com sucesso!");
+          })
+          .catch((error) => {
+            console.error(error);
+            toast.error("Dados já foram salvos!");
+          });
 
         const pdf = new jsPDF();
 
