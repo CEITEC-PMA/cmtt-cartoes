@@ -17,7 +17,6 @@ import imagem from "../../../public/auxiliarMotorista.jpg";
 
 import { cpf, cpf as cpfValidator } from "cpf-cnpj-validator";
 import axios from "axios";
-import TableList from "../../components/TableList";
 
 const Auxiliar = () => {
   const navigate = useNavigate();
@@ -265,7 +264,6 @@ const Auxiliar = () => {
           >
             Cadastrar
           </Button>
-          <TableList />
         </Grid>
 
         <Toaster />
