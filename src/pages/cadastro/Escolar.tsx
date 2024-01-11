@@ -50,7 +50,7 @@ const Escolar = () => {
 
         //PARTE DE CIMA DOS CARTOES
 
-        pdf.text(`${dadosValidados.marca}`, 55, 40);
+        pdf.text(`${dadosValidados.marca}`, 55, 43);
         pdf.text(`${dadosValidados.modelo}`, 55, 53);
         pdf.text(`${dadosValidados.cpf}`, 55, 60);
         pdf.text(`${dadosValidados.rg}`, 55, 71);

@@ -28,14 +28,14 @@ export const UnDateTimePicker: React.FC<TUnDateTimePicker> = ({
     });
   }, [registerField, fieldName, value]);
 
-  const minDateTime = min?.toISOString().slice(0, 16);
-  const maxDateTime = max?.toISOString().slice(0, 16);
+  const minDate = min?.toISOString().slice(0, 10);
+  const maxDate = max?.toISOString().slice(0, 10);
 
   return (
     <TextField
       {...rest}
       label={label}
-      type="datetime-local"
+      type="date"
       sx={{ width: 222 }}
       error={!!error}
       helperText={error}
@@ -43,8 +43,8 @@ export const UnDateTimePicker: React.FC<TUnDateTimePicker> = ({
       value={value}
       required
       inputProps={{
-        min: minDateTime,
-        max: maxDateTime,
+        min: minDate,
+        max: maxDate,
       }}
       InputLabelProps={{
         shrink: true,
