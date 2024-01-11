@@ -73,6 +73,7 @@ const Escolar = () => {
         pdf.text(`${dadosValidados.matricula}`, 76, 163);
         pdf.text(`${dadosValidados.modelo}`, 38, 147);
         pdf.text(`${dadosValidados.marca}`, 38, 156);
+        pdf.text(`${dadosValidados.name}`, 38, 140);
         pdf.text(`${dadosValidados.chassi}`, 38, 164);
         pdf.text(`${dadosValidados.ano}`, 38, 172);
         //segundo
@@ -80,6 +81,7 @@ const Escolar = () => {
         pdf.text(`${dadosValidados.cor}`, 179, 157);
         pdf.text(`${dadosValidados.modelo}`, 140, 150);
         pdf.text(`${dadosValidados.marca}`, 140, 157);
+        pdf.text(`${dadosValidados.name}`, 140, 140);
         pdf.text(`${dadosValidados.chassi}`, 140, 165);
         pdf.text(`${dadosValidados.ano}`, 140, 173);
         pdf.text(`${dadosValidados.matricula}`, 180, 166);

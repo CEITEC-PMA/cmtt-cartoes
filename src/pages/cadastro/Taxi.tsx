@@ -72,6 +72,7 @@ const Taxi = () => {
         pdf.text(`${dadosValidados.matricula}`, 76, 161);
         pdf.text(`${dadosValidados.modelo}`, 38, 145);
         pdf.text(`${dadosValidados.marca}`, 38, 154);
+        pdf.text(`${dadosValidados.name}`, 38, 138);
         pdf.text(`${dadosValidados.chassi}`, 38, 162);
         pdf.text(`${dadosValidados.ano}`, 38, 170);
         //segundo
@@ -79,6 +80,7 @@ const Taxi = () => {
         pdf.text(`${dadosValidados.cor}`, 179, 156);
         pdf.text(`${dadosValidados.modelo}`, 140, 148);
         pdf.text(`${dadosValidados.marca}`, 140, 157);
+        pdf.text(`${dadosValidados.name}`, 140, 140);
         pdf.text(`${dadosValidados.chassi}`, 140, 164);
         pdf.text(`${dadosValidados.ano}`, 140, 172);
         pdf.text(`${dadosValidados.matricula}`, 180, 166);
