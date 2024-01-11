@@ -17,6 +17,7 @@ import imagem from "../../../public/auxiliarMotorista.jpg";
 
 import { cpf, cpf as cpfValidator } from "cpf-cnpj-validator";
 import axios from "axios";
+import TableList from "../../components/TableList";
 
 const Auxiliar = () => {
   const navigate = useNavigate();
@@ -246,7 +247,13 @@ const Auxiliar = () => {
             <UnDateTimePicker name="emissao" label="Data emissão" />
           </Grid>
         </Grid>
-        <Grid container display="flex" direction="row" justifyContent="center">
+        <Grid
+          container
+          display="flex"
+          direction="column"
+          alignItems="center"
+          justifyContent="center"
+        >
           <Button
             variant="contained"
             type="submit"
@@ -258,6 +265,7 @@ const Auxiliar = () => {
           >
             Cadastrar
           </Button>
+          <TableList />
         </Grid>
 
         <Toaster />
