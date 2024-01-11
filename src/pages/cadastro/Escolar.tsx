@@ -76,6 +76,7 @@ const Escolar = () => {
         pdf.text(`${dadosValidados.name}`, 38, 140);
         pdf.text(`${dadosValidados.chassi}`, 38, 164);
         pdf.text(`${dadosValidados.ano}`, 38, 172);
+        pdf.text(`${dadosValidados.validade}`, 47, 178);
         //segundo
         pdf.text(`${dadosValidados.placa}`, 180, 148);
         pdf.text(`${dadosValidados.cor}`, 179, 157);
@@ -85,6 +86,7 @@ const Escolar = () => {
         pdf.text(`${dadosValidados.chassi}`, 140, 165);
         pdf.text(`${dadosValidados.ano}`, 140, 173);
         pdf.text(`${dadosValidados.matricula}`, 180, 166);
+        pdf.text(`${dadosValidados.validade}`, 180, 176);
 
         //DOIS CARTOES DE BAIXO
         //primeiro
@@ -97,6 +99,7 @@ const Escolar = () => {
         pdf.text(`${dadosValidados.matricula}`, 140, 218);
         pdf.text(`${dadosValidados.ponto}`, 140, 240);
         pdf.text(`${dadosValidados.inscricaomunicipal}`, 140, 225);
+        pdf.text(`${dadosValidados.validade}`, 140, 248);
 
         pdf.save("escolar.pdf");
 

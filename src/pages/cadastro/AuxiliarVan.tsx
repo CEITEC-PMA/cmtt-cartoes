@@ -69,6 +69,8 @@ const Van = () => {
         pdf.text(`${dadosValidados.name}`, 42, 168);
         //segundo
         pdf.text(`${dadosValidados.matricula}`, 141, 140);
+        pdf.text(`${dadosValidados.name}`, 140, 160);
+
         pdf.text(`${dadosValidados.validade}`, 177, 151);
 
         pdf.save("van.pdf");
