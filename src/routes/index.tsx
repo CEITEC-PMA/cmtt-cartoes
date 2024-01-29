@@ -6,6 +6,7 @@ import Taxi from "../pages/cadastro/Taxi";
 import Sidebar from "./menuRoute";
 import Auxiliar from "../pages/cadastro/AuxiliarMotorista";
 import Van from "../pages/cadastro/AuxiliarVan";
+import AuxiliarTaxi from "../pages/cadastro/AuxiliarTaxi";
 
 export const AppRoutes = () => {
   return (
@@ -15,6 +16,7 @@ export const AppRoutes = () => {
         <Route element={<App />}>
           <Route path="/cadastroescolar" element={<Escolar />} />
           <Route path="/cadastroauxiliar" element={<Auxiliar />} />
+          <Route path="/auxiliartaxi" element={<AuxiliarTaxi />} />
           <Route path="/cadastrotaxi" element={<Taxi />} />
           <Route path="/cadastromoto" element={<MotoTaxi />} />
           <Route path="/cadastrovan" element={<Van />} />

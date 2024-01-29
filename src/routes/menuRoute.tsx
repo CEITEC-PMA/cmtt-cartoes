@@ -22,6 +22,7 @@ import SportsMotorsportsIcon from "@mui/icons-material/SportsMotorsports";
 import Link from "@mui/material/Link";
 import GroupAddIcon from "@mui/icons-material/GroupAdd";
 import AirportShuttleIcon from "@mui/icons-material/AirportShuttle";
+import NoCrashIcon from "@mui/icons-material/NoCrash";
 
 const drawerWidth = 220;
 
@@ -245,6 +246,37 @@ export default function Sidebar() {
               >
                 <ListItemText
                   primary="Taxistas"
+                  sx={{ opacity: open ? 1 : 0 }}
+                />
+              </Link>
+            </ListItemButton>
+          </ListItem>
+          <ListItem disablePadding sx={{ display: "block" }}>
+            <ListItemButton
+              sx={{
+                minHeight: 54,
+                justifyContent: open ? "initial" : "center",
+                px: open ? 2.5 : 10.5,
+              }}
+            >
+              <ListItemIcon
+                sx={{
+                  minWidth: 0,
+                  mr: open ? 2 : "auto",
+                  justifyContent: "center",
+                }}
+              >
+                <Link href="/auxiliartaxi" sx={{ color: "#6d7070" }}>
+                  <NoCrashIcon />
+                </Link>
+              </ListItemIcon>
+              <Link
+                href="/auxiliartaxi"
+                underline="none"
+                sx={{ color: "#6d7070" }}
+              >
+                <ListItemText
+                  primary="Auxiliar taxista"
                   sx={{ opacity: open ? 1 : 0 }}
                 />
               </Link>
